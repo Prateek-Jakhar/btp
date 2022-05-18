@@ -1,0 +1,27 @@
+.main-leftHeader {
+  position: absolute;
+  width: 228px;
+  height: 960px;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  display: flex;
+  /* flex-direction: r; */
+}
+
+#name {
+  position: absolute;
+  width: 103px;
+  height: fit-content;
+  left: 86px;
+  top: 41px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: -7px;
+  margin-left: 11px;
+  color: #232c33;
+}
+.main-logo {
+  width: 93px;
+}
