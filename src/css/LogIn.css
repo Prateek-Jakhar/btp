@@ -1,4 +1,4 @@
-.main {
+/* .main {
   position: absolute;
   left: 0;
   height: 100vh;
@@ -8,7 +8,7 @@
 
 .lnmLogo {
   /* position: relative; */
-  align-items: center;
+  /* align-items: center;
   width: 169px;
   height: 84px;
   left: 90px;
@@ -40,13 +40,13 @@
   align-items: center;
   justify-content: space-between;
   /* text-align: left; */
-}
+/* } */
 
 /* .inputDiv {
   display: flex;
   flex-direction: row;
 } */
-
+/* 
 .container {
   display: flex;
   flex-direction: column;
@@ -67,4 +67,10 @@
   background: #d7263d;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+} */ 
+
+#imageSide{
+  text-align: center;
+  display: block;
+  margin: auto;
 }
