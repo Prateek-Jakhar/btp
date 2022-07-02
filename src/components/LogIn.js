@@ -3,19 +3,20 @@ import { Container, Row, Col } from "react-bootstrap";
 import "../css/LogIn.css";
 import Grid from '@mui/material/Grid';
 import sideImage from './../assets/login_image.png';
-import { LoginForm } from './LoginForm.js';
+import LoginForm  from './LoginForm';
 
 const LogIn = () => {
   return (
     <div>
       <Grid container>
-        <Grid item xs={3}>
-          {LoginForm}
+        <Grid item xs={4}>
+          <LoginForm />
         </Grid>
         <Grid
           item
-          xs={9}>
-            <img src={sideImage} />
+          xs={8}
+          style={{ backgroundColor: "#E5E5E5", height: "100vh" }}>
+          <img id="imageSide" src={sideImage} />
         </Grid>
 
       </Grid>
