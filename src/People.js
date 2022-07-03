@@ -1,10 +1,11 @@
 import React from "react";
 import PeopleList from "./components/PeopleCardList";
+import LeftHeader from "./components/LeftHeader";
 
 const People = () => {
   return (
     <div>
-      {/* Logo */}
+      <LeftHeader/>
       {/* options */}
       <PeopleList/>
       {/*  Discover */}
