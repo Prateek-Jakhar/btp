@@ -7,7 +7,7 @@ const People = () => {
     <div>
       <LeftHeader/>
       {/* options */}
-      <PeopleList/>
+      {/*<PeopleList/>*/}
       {/*  Discover */}
       {/* Profile Button */}
     </div>

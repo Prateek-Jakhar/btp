@@ -13,4 +13,4 @@ const HeaderOptions = () => {
      )
 }
 
-export default HeaderOptions
+export default HeaderOptions;
