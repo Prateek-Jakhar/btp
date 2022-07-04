@@ -25,3 +25,14 @@
 .main-logo {
   width: 93px;
 }
+
+.header-options {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+}
+
+.option1 {
+  margin-top: 136px;
+  margin-left: -61px;
+}

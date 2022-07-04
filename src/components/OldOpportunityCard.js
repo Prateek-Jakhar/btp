@@ -26,11 +26,11 @@ const OldOpportunityCard = () => {
             <Button details={"FEV India"} />
           </span>
         </div>
-        <div>
+        {/* <div>
           <span>
             <Button details={"chutiya"} />
           </span>
-        </div>
+        </div> */}
       </div>
       <br />
       <hr />
