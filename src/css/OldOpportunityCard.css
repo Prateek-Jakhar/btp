@@ -9,7 +9,7 @@
   box-shadow: 4px 4px 18px 1px rgba(41, 88, 128, 0.15);
   border-radius: 12px;
 }
-.compay-heading {
+.company-heading {
   position: static;
   display: flex;
   flex-direction: row;
@@ -23,6 +23,7 @@
   color: #41337a;
   margin-top: 20px;
   margin-left: 25px;
+  
 }
 
 .posted-by-system {
