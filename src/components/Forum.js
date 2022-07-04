@@ -10,8 +10,11 @@ const Forum=()=>{
     return(
         <div className="forum-main">
             <OldOpportunityCard/>
-            <div class="number-of-responses">1 response</div>
+            <div class="number-of-responses">
+                1 response
+            </div>
             <hr/>
+            
             <CommentBox/>
             <br/>
             <br/>
