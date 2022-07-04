@@ -1,6 +1,6 @@
 .main-old {
   margin: 50px 50px;
-  position: absolute;
+  position: static;
   width: 896px;
   height: 266px;
   left: 0px;
