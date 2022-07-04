@@ -1,15 +1,15 @@
 .main-old {
   margin: 50px 50px;
-  position: absolute;
+  position: static;
   width: 896px;
-  height: 266px;
+  height: 246px;
   left: 0px;
   top: 0px;
   background: #ffffff;
   box-shadow: 4px 4px 18px 1px rgba(41, 88, 128, 0.15);
   border-radius: 12px;
 }
-.compay-heading {
+.company-heading {
   position: static;
   display: flex;
   flex-direction: row;
@@ -23,6 +23,7 @@
   color: #41337a;
   margin-top: 20px;
   margin-left: 25px;
+  
 }
 
 .posted-by-system {
@@ -62,6 +63,12 @@
 .bottom {
   display: flex;
   flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 56px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .bottom > img {
@@ -79,11 +86,12 @@
 }
 
 .numberOfDays {
-  position: absolute;
+  position: static;
   width: 67px;
   height: 16px;
   left: 797px;
   top: 225px;
+  text-align: right;
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
