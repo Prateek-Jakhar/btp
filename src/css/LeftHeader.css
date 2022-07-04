@@ -1,5 +1,5 @@
 .main-leftHeader {
-  position: absolute;
+  position: static;
   width: 228px;
   height: 960px;
   left: 0px;
