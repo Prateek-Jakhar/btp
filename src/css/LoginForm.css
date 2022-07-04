@@ -1,8 +1,8 @@
 .main{
     display: flex;
     flex-direction: column;
-    width: 600px;
     height: 100vh;
+    margin-top: 100px;
 }
 
 #logoImage{
@@ -20,6 +20,7 @@ margin-left: auto;
 margin-right: auto;
 margin-top: 40px;
 border-radius: 10px;
+border: none;
 font-family: 'Nunito';
 font-style: normal;
 font-weight: 400;
@@ -27,12 +28,29 @@ font-size: 16px;
 line-height: 22px;
 }
 
+.inputs{
+    height: 130px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 
-.login {
+.inp{
+    height: 50px;
+    width: 348px;
+}
+
+.inp-password{
+    height: 50px;
+    width: 348px;
+}
+
+#login {
   width: 349px;
   height: 50px;
-  left: 0.5px;
-  top: 0%;
+  margin-top: 30px;
   background: #F7F7F8;
   border-radius: 10px;
   border: 1px solid #F7F7F8;

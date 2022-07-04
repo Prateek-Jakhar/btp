@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import "../css/LogIn.css";
 import Grid from '@mui/material/Grid';
 import sideImage from './../assets/login_image.png';
@@ -16,7 +15,12 @@ const LogIn = () => {
           item
           xs={8}
           style={{ backgroundColor: "#E5E5E5", height: "100vh" }}>
-          <img id="imageSide" src={sideImage} />
+          <div id = "imageSide">
+            <center> <img className="image" src = {
+              sideImage
+            }
+            /></center>
+            </div>
         </Grid>
 
       </Grid>

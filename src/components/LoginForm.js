@@ -1,23 +1,23 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import LoginLogo from './../assets/login_logo.png';
-import DividerWithText from './DividerWithText'
+import DividerWithText from './DividerWithText';
+import { TextField } from '@material-ui/core';
 import './../css/LoginForm.css'
 
 const LoginForm = () => {
   return (
       <div class="main">
           <img id="logoImage" src={LoginLogo} alt="log" width="96px" height="148px"/>
-              <button className="button-google">Google</button>
-          <DividerWithText className="divider">Or</DividerWithText>
+          <button className="button-google">Google</button>
+              <DividerWithText>Or</DividerWithText>
+         
           <div className="container">
               
-              <label htmlFor="login" style={{textAlign:"left", marginTop:"30px"}}>Email Address</label>
-              <input id="login" className="login" type="text" />
-
-              <label htmlFor='password' style={{marginTop:"20px"}}>Password</label>
-              <input id='password' className="login" type="Password" />
-
+              <div className="inputs">
+              <TextField id="outlined-basic login" label="College Email" className="inp" variant="outlined" type="email" />
+              <TextField id="outlined-basic login" label="Password" className="inp-password" variant="outlined" type="password" />
+              </div>
               <div className="check">
                   <div>
                       <input type="checkbox" />
