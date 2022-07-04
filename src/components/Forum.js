@@ -7,6 +7,9 @@ const Forum=()=>{
     return(
         <div>
             <OldOpportunityCard/>
+            <br/>
+            <span classname="number-of-responses">1 response</span>
+            <hr/>
             <CommentBox/>
         </div>
     )
