@@ -8,7 +8,7 @@ import "../css/Forum.css";
 
 const Forum=()=>{
     return(
-        <div>
+        <div className="forum-main">
             <OldOpportunityCard/>
             <div class="number-of-responses">1 response</div>
             <hr/>
