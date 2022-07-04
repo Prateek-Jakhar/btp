@@ -1,14 +1,14 @@
 import React from "react";
 import CommentBox from "./CommentBox.js";
 import OldOpportunityCard from './OldOpportunityCard.js';
+import "../css/Forum.css";
 
 
 const Forum=()=>{
     return(
         <div>
             <OldOpportunityCard/>
-            <br/>
-            <span classname="number-of-responses">1 response</span>
+            <div class="number-of-responses">1 response</div>
             <hr/>
             <CommentBox/>
         </div>

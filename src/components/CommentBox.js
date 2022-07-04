@@ -5,7 +5,7 @@ import pic from "../assets/student-pic.png";
 const CommentBox =()=>{
     return(
         <div className="comment-block">
-            <img class="image" src={pic} alt="" />
+            <img className="image" src={pic} alt="" />
             <div className="comment-box">
 
                 <p className="free-space">
