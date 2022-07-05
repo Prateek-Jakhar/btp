@@ -3,9 +3,11 @@ import "./App.css";
 // import HeaderOptions from "./components/HeaderOptions";
 // import LogIn from "./components/LogIn";
 // import NewOpportunityCard from "./components/NewOpportunityCard";
-// import NewOpportunityCardTop from "./components/NewOpportunityCardTop";
+import NewOpportunityCardTop from "./components/NewOpportunityCardTop";
 // import OldOpportunityCard from "./components/OldOpportunityCard";
-import LeftHeader from "./components/LeftHeader";
+// import LeftHeader from "./components/LeftHeader";
+import Dashboard from "./components/Dashboard";
+import People from "./components/pages/People";
 
 function App() {
   return (
@@ -15,9 +17,10 @@ function App() {
       {/* <NewOpportunityCardTop /> */}
       {/* <OldOpportunityCard /> */}
       {/* <FeedButton text={"Discover"} /> */}
-      {/* <FeedButton text={"My Feed"} /> */}
-      {<LeftHeader />}
+      {/* {<LeftHeader />} */}
       {/* <HeaderOptions /> */}
+      {/* <Dashboard /> */}
+      <People />
     </div>
   );
 }

@@ -5,7 +5,7 @@ const FeedButton = ({ text }) => {
   return (
     <div
       className={` ${
-        text === "My Feed" ? "buttonDesignFeed" : "buttonDesignDiscover"
+        text === "Verified" ? "buttonDesignFeed" : "buttonDesignDiscover"
       }`}
     >
       {text}

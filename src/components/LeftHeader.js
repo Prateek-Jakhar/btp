@@ -13,7 +13,7 @@ function LeftHeader() {
       <div className="header-options">
         <div className="option1">
           <HeaderOptions name={"Dashboard"} />
-          <HeaderOptions name={"People"} />
+          {/* <HeaderOptions name={"People"} /> */}
         </div>
       </div>
     </div>
