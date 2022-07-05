@@ -15,12 +15,9 @@ const LogIn = () => {
           item
           xs={8}
           style={{ backgroundColor: "#E5E5E5", height: "100vh" }}>
-          <div id = "imageSide">
-            <center> <img className="image" src = {
-              sideImage
-            }
-            /></center>
-            </div>
+          <div id="imageSide">
+            <img src={sideImage} alt="" />
+          </div>
         </Grid>
 
       </Grid>

@@ -18,6 +18,7 @@ const LoginForm = () => {
               <TextField id="outlined-basic login" label="College Email" className="inp" variant="outlined" type="email" />
               <TextField id="outlined-basic login" label="Password" className="inp-password" variant="outlined" type="password" />
               </div>
+
               <div className="check">
                   <div>
                       <input type="checkbox" />
@@ -30,7 +31,7 @@ const LoginForm = () => {
 
               <button style={{ border:"1px solid #41337A"}}>Log In</button>
 
-              <span className='newAccount'> Don't have an account yet?</span><span className="createAcc">Create Account</span>
+              <div className="bottom-div"><span className='newAccount'> Don't have an account yet?</span><span className="createAcc">Create Account</span></div>
           </div>
     </div>
   )
