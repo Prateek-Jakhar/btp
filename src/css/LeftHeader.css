@@ -1,7 +1,7 @@
 .main-leftHeader {
   position: static;
   width: 228px;
-  height: 960px;
+  height: 100%;
   left: 0px;
   top: 0px;
   background: #ffffff;
@@ -24,4 +24,15 @@
 }
 .main-logo {
   width: 93px;
+}
+
+.header-options {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+}
+
+.option1 {
+  margin-top: 136px;
+  margin-left: -61px;
 }
