@@ -1,11 +1,10 @@
 .main-old {
-<<<<<<< HEAD
   margin: 50px 0px;
-  /* position: absolute; */
-=======
-  margin: 50px 50px;
-  position: static;
->>>>>>> cef959547712228a085797f668dede2bbe97ad33
+  
+/*   position: absolute; */
+/*   margin: 50px 50px;
+  position: static; */
+  
   width: 896px;
   height: 246px;
   left: 0px;
