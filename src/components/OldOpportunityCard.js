@@ -1,12 +1,12 @@
 import React from "react";
 import "../css/OldOpportunityCard.css";
 import Button from "./Button";
-import logo from "../assets/background.png";
+import pic from "../assets/student-pic.png";
 
 const OldOpportunityCard = () => {
   return (
     <div className="main-old">
-      <div className="compay-heading">
+      <div className="company-heading">
         <p style={{ marginBottom: "4px" }}>
           FFEV India - Hiring for Automotive Cyber security and <br />
           ADAS/Infotainment Testing profile. - 2022 Batch Recruitment Eve...{" "}
@@ -35,7 +35,7 @@ const OldOpportunityCard = () => {
       <br />
       <hr />
       <div className="bottom">
-        <img src={logo} alt="" />
+        <img src={pic} alt="" />
         <span className="name">
           <strong>Ratik Jain</strong> shared his experience
         </span>

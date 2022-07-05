@@ -21,7 +21,7 @@ const PeopleCard = () => {
             <div className="photo">
                 <img src={pic} alt="" />
             </div>
-            <div className="bottom">
+            <div className="msg-bottom">
                 <span className="Message-button">
                     <img src={msg} alt="" />
                     <strong>Messages</strong>

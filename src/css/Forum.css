@@ -1,0 +1,21 @@
+.forum-main{
+    background: #FCFCF5;;
+}
+.number-of-responses{
+    width: 102px;
+height: 26px;
+margin-left: 36px;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 19px;
+line-height: 26px;
+/* identical to box height */
+
+
+/* text */
+
+color: #232C33;
+
+
+}

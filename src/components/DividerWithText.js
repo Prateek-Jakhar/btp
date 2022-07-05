@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   },
   border: {
     borderBottom: "2px solid lightgray",
-    width: "50%"
+    width: "100%",
   },
   content: {
     paddingTop: theme.spacing(0.5),
