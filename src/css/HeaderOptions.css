@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-.menu {
+/* .menu {
   position: static;
   margin-top: 102 px;
   width: 228px;
@@ -29,8 +28,7 @@
 }
 .Dashboard {
   position: flex;
-}
-=======
+} */
 .menu{
   position: static;
   margin-top: 102 px; 
@@ -62,4 +60,3 @@ font-style: normal;
 .Dashboard{
   position: flex;
 }
->>>>>>> cef959547712228a085797f668dede2bbe97ad33
