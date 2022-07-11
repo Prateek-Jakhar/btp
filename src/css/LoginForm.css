@@ -58,15 +58,14 @@ line-height: 22px;
 
 
 .check {
-  margin-top: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 350px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
   display: flex;
+  width:348px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* text-align: left; */
 }
 
 #spanForgotPassword{
@@ -81,6 +80,7 @@ line-height: 22px;
 
 .container > button {
     height: 50px;
+    width: 348px;
     background: #41337A;
     border-radius: 10px;
     font-family: 'Nunito';
@@ -92,6 +92,9 @@ color: white;
 cursor: pointer;
 }
 
+.bottom-div{
+    margin-top: 30px;
+}
 .newAccount{
     display: inline;
     font-family: 'Nunito';
