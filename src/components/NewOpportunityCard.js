@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/letter_z.png";
 import "../css/NewOpportunityCard.css";
 import { Icon } from "semantic-ui-react";
+import hat from "../assets/hat.png";
 
 const NewOpportunityCard = () => {
   return (
     <div className="main-card">
-      <div style={{ marginTop: "20px" }} className="top">
+      <div className="top">
         <div className="company-info">
           <img src={logo} alt="" />
           <div>
@@ -16,13 +17,13 @@ const NewOpportunityCard = () => {
             </p>
           </div>
 
-          <span className="icon">
-            <Icon enabled name="graduation cap" />
-          </span>
+          <div className="graduation-cap">
+          <img src={hat} alt="" />
+          </div>
         </div>
         {/* <div className="graduation-cap">
         </div> */}
-        <div className="date"></div>
+        {/* <div className="date"></div> */}
       </div>
       <div className="middle">
         <div className="job-type">
@@ -38,10 +39,10 @@ const NewOpportunityCard = () => {
           <span style={{ marginRight: "247px" }}>Stipend: Rs 30,000</span>
         </div>
       </div>
-      <hr style={{ marginLeft: "30px" }} />
+      <hr style={{ marginLeft: "24px"}} />
       <div className="bottom">
         <span style={{ marginRight: "30px" }}>4 days ago</span>
-        <span style={{ marginRight: "-72px", color: "#D7263D" }}>
+        <span style={{ marginRight: "0px", color: "#D7263D" }}>
           <Icon enabled name="clock outline" />
           Registration Ended 3 days ago
         </span>
