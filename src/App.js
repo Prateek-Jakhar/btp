@@ -8,18 +8,22 @@ import NewOpportunityCardTop from "./components/NewOpportunityCardTop";
 // import LeftHeader from "./components/LeftHeader";
 import Dashboard from "./components/Dashboard";
 import People from "./components/pages/People";
-import Forum from "./components/Forum";
+import Forum from "./components/Forum.js";
+import Applications from "./components/Applications";
 
 function App() {
   return (
     <div className="App">
-      <LogIn />
+      {/*<LogIn />*/}
       {/* <NewOpportunityCard /> */} {/* <NewOpportunityCardTop /> */}{" "}
       {/*<OldOpportunityCard />*/}
       {/* <Forum /> */}
-      {/*<PeopleCard />*/} {/*<PeopleList/>*/}{" "}
-      {/* <FeedButton text={"Discover"} /> */} {/* {<LeftHeader />} */}{" "}
+      {/*<PeopleCard />*/} 
+      {/*<PeopleList/>*/}
+      {/* <FeedButton text={"Discover"} /> */} 
+      {/* {<LeftHeader />} */}
       {/*<LeftMenu />*/}
+      <Applications/>
     </div>
   );
 }
