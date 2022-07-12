@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import People from "./components/pages/People";
 import Forum from "./components/Forum.js";
 import Applications from "./components/Applications";
+import Opportunity from "./components/Opportunity";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       {/*<LogIn />*/}
       {/* <NewOpportunityCard /> */} {/* <NewOpportunityCardTop /> */}{" "}
       {/*<OldOpportunityCard />*/}
-      <Forum />
+      {/* <Forum /> */}
       {/*<PeopleCard />*/}
       {/*<PeopleList/>*/}
       {/* <FeedButton text={"Discover"} /> */}
@@ -25,6 +26,7 @@ function App() {
       {/*<LeftMenu />*/}
       {/* <Applications /> */}
       {/* <People /> */}
+      <Opportunity />
     </div>
   );
 }
