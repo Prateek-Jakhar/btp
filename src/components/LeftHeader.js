@@ -9,7 +9,7 @@ function LeftHeader() {
       <div style={{ height: "fitContent" }}>
         <img className="main-logo" src={mainLogo} alt="" />
       </div>
-      <div id="name">Calyxpod</div>
+      <div id="name">InteHire</div>
       <div className="header-options">
         <div className="option1">
           <HeaderOptions name={"Dashboard"} />

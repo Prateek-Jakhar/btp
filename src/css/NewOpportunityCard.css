@@ -2,7 +2,7 @@
   /* margin: auto; */
   /* margin-left: 25px; */
   margin-top: 25px;
-  /* position: absolute; */
+  position: static;
   width: 896px;
   height: 182px;
   left: 0px;
@@ -10,6 +10,10 @@
   background: #ffffff;
   box-shadow: 4px 4px 18px 1px rgba(41, 88, 128, 0.15);
   border-radius: 12px;
+}
+.top{
+  position:relative;
+  margin-top: 20px;
 }
 
 .company-info {
@@ -26,7 +30,7 @@
   height: 48px;
   left: 0px;
   top: 0px;
-  border: 1px solid #232c33;
+  /* border: 1px solid #232c33; */
   box-sizing: border-box;
   border-radius: 16px;
   flex: none;
@@ -98,7 +102,10 @@
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 100px;
+  
 }
 
 .graduation-cap {
+  margin-left: 574 px;
+  align-items: right;
 }
