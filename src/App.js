@@ -13,13 +13,14 @@ import Forum from "./components/Forum";
 function App() {
   return (
     <div className="App">
-      <LogIn />
+      {/* <LogIn /> */}
       {/* <NewOpportunityCard /> */} {/* <NewOpportunityCardTop /> */}{" "}
       {/*<OldOpportunityCard />*/}
-      {/* <Forum /> */}
-      {/*<PeopleCard />*/} {/*<PeopleList/>*/}{" "}
+      <Forum />
+      {/* <PeopleCard /> <PeopleList/>{" "} */}
       {/* <FeedButton text={"Discover"} /> */} {/* {<LeftHeader />} */}{" "}
       {/*<LeftMenu />*/}
+      {/* <Dashboard /> */}
     </div>
   );
 }

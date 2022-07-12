@@ -1,21 +1,24 @@
-.forum-main{
-    background: #FCFCF5;;
+.forumMain {
+  display: flex;
+  flex-direction: row;
+  background-color: #fcfcf5;
 }
-.number-of-responses{
-    width: 102px;
-height: 26px;
-margin-left: 36px;
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 700;
-font-size: 19px;
-line-height: 26px;
-/* identical to box height */
 
+.forumMainRight {
+  margin-left: 32px;
+}
+.number-of-responses {
+  width: 102px;
+  height: 26px;
+  margin-left: 36px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 26px;
+  /* identical to box height */
 
-/* text */
+  /* text */
 
-color: #232C33;
-
-
+  color: #232c33;
 }

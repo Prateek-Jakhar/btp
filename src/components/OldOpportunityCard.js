@@ -22,9 +22,9 @@ const OldOpportunityCard = () => {
       </p>
       <div className="detail-tag">
         <div>
-          <span>
+          {/* <span>
             <Button details={"FEV India"} />
-          </span>
+          </span> */}
         </div>
         {/* <div>
           <span>
