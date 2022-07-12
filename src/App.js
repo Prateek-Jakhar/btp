@@ -11,6 +11,7 @@ import People from "./components/pages/People";
 import Forum from "./components/Forum.js";
 import Applications from "./components/Applications";
 import Opportunity from "./components/Opportunity";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -26,7 +27,17 @@ function App() {
       {/*<LeftMenu />*/}
       {/* <Applications /> */}
       {/* <People /> */}
-      <Opportunity />
+      {/* <Opportunity /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/forum" element={<Forum />} />
+          <Route path="/application" element={<Applications />} />
+          <Route path="/opportunity" element={<Opportunity />} />
+          <Route path="/people" element={<People />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
