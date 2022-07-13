@@ -7,7 +7,7 @@ import NewOpportunityCardTop from "./components/NewOpportunityCardTop";
 // import OldOpportunityCard from "./components/OldOpportunityCard";
 // import LeftHeader from "./components/LeftHeader";
 import Dashboard from "./components/Dashboard";
-import People from "./components/pages/People";
+import People from "./components/People";
 import Forum from "./components/Forum.js";
 import Applications from "./components/Applications";
 import Opportunity from "./components/Opportunity";

@@ -1,8 +1,10 @@
 import React from "react";
-import "./people.css";
-import LeftHeader from "../LeftHeader";
+import "../css/people.css";
+import LeftHeader from "./LeftHeader";
+import PeopleList from "./PeopleCardList";
 // import FeedButton from "../FeedButton";
 // import PeopleButton from "../PeopleButton";
+
 
 const People = () => {
   return (
@@ -11,6 +13,7 @@ const People = () => {
         <div style={{ width: "228px" }}>
           <LeftHeader />
         </div>
+          <PeopleList/>
       </div>
     </div>
   );
