@@ -7,7 +7,6 @@ const CommentBox =()=>{
         <div className="comment-block">
             <img className="image" src={pic} alt="" />
             <div className="comment-box">
-
                 <p className="free-space">
                     Add a comment ....
                 </p>
