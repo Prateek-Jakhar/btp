@@ -5,7 +5,7 @@ import FeedButton from "./FeedButton";
 import NewOpportunityCard from "./NewOpportunityCard";
 import OldOpportunityCard from "./OldOpportunityCard";
 import NewOpportunityCardTop from "./NewOpportunityCardTop";
-import db from "./Firebase";
+import {db} from "./Firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 const Dashboard = () => {

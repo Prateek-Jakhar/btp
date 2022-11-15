@@ -3,7 +3,7 @@ import OldOpportunityCard from "./OldOpportunityCard";
 import "../css/Applications.css";
 import NewOpportunityCard from "./NewOpportunityCard";
 import ProfileButton from "./ProfileButton";
-import db from "./Firebase";
+import {db} from "./Firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 const Applications=()=>{

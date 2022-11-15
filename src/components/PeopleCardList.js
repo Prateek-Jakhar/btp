@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PeopleCard from "./PeopleCard.js";
 import Grid from '@mui/material/Grid';
-import db from "./Firebase";
+import {db} from "./Firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 /*const PeopleList = props => {
