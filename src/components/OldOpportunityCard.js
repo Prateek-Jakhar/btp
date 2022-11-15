@@ -3,22 +3,49 @@ import "../css/OldOpportunityCard.css";
 import Button from "./Button";
 import pic from "../assets/student-pic.png";
 
-const OldOpportunityCard = () => {
+const OldOpportunityCard = ({info}) => {
+  let profile_data = info.company_name + ' - Hiring for ';
+  for (let i=0; i<info.profile.length; i++){
+    if (i === 0){
+      profile_data += info.profile[i]
+    }else if (i === (info.profile.length-1)){
+      profile_data += ' and '
+      profile_data += info.profile[i]
+    }else{
+      profile_data += ', '
+      profile_data += info.profile[i]
+    }
+  }
+
+  const recruit_year = parseInt(info.batch_year) + 4;
+  profile_data += '. - ' + recruit_year + ' Batch Recruitment Event'
+
+  if (profile_data.length > 120){
+    profile_data = profile_data.slice(0, 117) + '...';
+  }
+
+  let profile_disc = info.description;
+  console.log(profile_disc.length);
+
+  if (profile_disc.length > 350){
+    profile_disc = profile_disc.slice(0, 347) + '...';
+  }
+
+  var date1 = new Date(info.experience[0].date.seconds*1000);
+  var date2 = new Date();
+  var diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
   return (
     <div className="main-old">
       <div className="company-heading">
         <p style={{ marginBottom: "4px" }}>
-          FFEV India - Hiring for Automotive Cyber security and <br />
-          ADAS/Infotainment Testing profile. - 2022 Batch Recruitment Eve...{" "}
+          {profile_data}
         </p>
       </div>
       <span className="posted-by-system">Posted by system</span>
       <p className="main-content">
-        This post has been created for all the students to share and discuss the
-        Recruitment Event conducted for FEV India Below is a quick overview of
-        the Position Details: ADAS/Infotainment Testing Package: 800000
-        Description: Unit Testing, Functional Testing, Integration Testing for
-        ADAS & Infotainment ...
+        {profile_disc}
       </p>
       <div className="detail-tag">
         <div>
@@ -37,9 +64,9 @@ const OldOpportunityCard = () => {
       <div className="bottom">
         <img src={pic} alt="" />
         <span className="name">
-          <strong>Ratik Jain</strong> shared his experience
+          <strong>{info.experience[0].name}</strong> shared his experience
         </span>
-        <span className="numberOfDays">19 days ago</span>
+        <span className="numberOfDays">{diffDays} days ago</span>
       </div>
     </div>
   );

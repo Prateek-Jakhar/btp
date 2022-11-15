@@ -10,8 +10,9 @@ import { collection, getDocs } from "firebase/firestore";
 
 const Dashboard = () => {
   const [dataApplication, setDataApplication] = useState([]);
+  const [dataForums, setDataForums] = useState([]);
 
-    const fetchPost = async () => {
+    const fetchPostApplication = async () => {
         const querySnapshot = await getDocs(collection(db, "applications"))
         let data_list = []
         querySnapshot.forEach((doc) => {
@@ -20,8 +21,22 @@ const Dashboard = () => {
         setDataApplication(data_list);
     }
 
+    const fetchPostForums = async () => {
+        const querySnapshot = await getDocs(collection(db, "forums"))
+        let data_list2 = []
+        querySnapshot.forEach((doc) => {
+            data_list2.push(doc.data());
+        });
+        setDataForums(data_list2);
+    }
+
     useEffect(()=>{
-        fetchPost();
+        fetchPostApplication();
+        fetchPostForums();
+    },[])
+
+    useEffect(()=>{
+        fetchPostApplication();
     },[])
 
   return (
@@ -48,7 +63,13 @@ const Dashboard = () => {
           })}
         </div>
         <div className="mainBottom">
-          <OldOpportunityCard />
+          {dataForums.map((item)=>{
+            return(
+              <>
+                <OldOpportunityCard info={item}/>
+              </>
+            )
+          })}
         </div>
       </div>
     </div>
