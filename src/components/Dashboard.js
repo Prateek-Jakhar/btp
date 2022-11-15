@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./../css/Dashboard.css";
 import LeftHeader from "./LeftHeader";
 import FeedButton from "./FeedButton";
 import NewOpportunityCard from "./NewOpportunityCard";
 import OldOpportunityCard from "./OldOpportunityCard";
 import NewOpportunityCardTop from "./NewOpportunityCardTop";
+import db from "./Firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const Dashboard = () => {
+  const [dataApplication, setDataApplication] = useState([]);
+
+    const fetchPost = async () => {
+        const querySnapshot = await getDocs(collection(db, "applications"))
+        let data_list = []
+        querySnapshot.forEach((doc) => {
+            data_list.push(doc.data());
+        });
+        setDataApplication(data_list);
+    }
+
+    useEffect(()=>{
+        fetchPost();
+    },[])
+
   return (
     <div className="dashboardMain">
       <div style={{ width: "228px" }}>
@@ -22,7 +39,13 @@ const Dashboard = () => {
           <NewOpportunityCardTop />
         </div>
         <div className="mainSecondMiddle">
-          <NewOpportunityCard />
+          {dataApplication.map((item)=>{
+            return(
+              <>
+                <NewOpportunityCard info={item}/>
+              </>
+            )
+          })}
         </div>
         <div className="mainBottom">
           <OldOpportunityCard />

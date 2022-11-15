@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import OldOpportunityCard from "./OldOpportunityCard";
 import "../css/Applications.css";
 import NewOpportunityCard from "./NewOpportunityCard";
 import ProfileButton from "./ProfileButton";
+import db from "./Firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const Applications=()=>{
+    const [dataApplication, setDataApplication] = useState([]);
+
+    const fetchPost = async () => {
+        const querySnapshot = await getDocs(collection(db, "applications"))
+        let data_list = []
+        querySnapshot.forEach((doc) => {
+            data_list.push(doc.data());
+        });
+        setDataApplication(data_list);
+    }
+
+    useEffect(()=>{
+        fetchPost();
+    },[])
+
     return(
         <div className="main-applications" >
             <div className="application-header">
@@ -17,12 +34,21 @@ const Applications=()=>{
                 <ProfileButton/>
             </div>
             <div className="application-cards">
-                <NewOpportunityCard />
+                {/* <NewOpportunityCard />
                 <br />
                 <NewOpportunityCard />
                 <br />
                 <NewOpportunityCard />
-                <br />
+                <br /> */}
+
+                {dataApplication.map((item)=>{
+                    return(
+                        <>
+                            <NewOpportunityCard info={item}/>
+                            <br />
+                        </>
+                    )
+                })}
                 
             </div>
             <text className="finish">Yay, You have seen it all!</text>

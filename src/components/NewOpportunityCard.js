@@ -4,14 +4,22 @@ import "../css/NewOpportunityCard.css";
 import { Icon } from "semantic-ui-react";
 import hat from "../assets/hat.png";
 
-const NewOpportunityCard = () => {
+const NewOpportunityCard = ({info}) => {
+  var date1 = new Date(info.date.seconds*1000);
+  var date2 = new Date();
+  // console.log(date1);
+  // console.log(date2);
+  var diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+  // console.log(diffTime + " milliseconds");
+  // console.log(diffDays + " days");
   return (
     <div className="main-card">
       <div className="top">
         <div className="company-info">
           <img src={logo} alt="" />
           <div>
-            <h3>Software Developer Intern</h3>
+            <h3>{info.title}</h3>
             <p style={{ marginLeft: "-128px", marginTop: "-8px" }}>
               ZS Associates
             </p>
@@ -35,13 +43,13 @@ const NewOpportunityCard = () => {
           </span>
         </div>
         <div className="intern">
-          <span style={{ marginLeft: "30px" }}>Internship</span>
-          <span style={{ marginRight: "247px" }}>Stipend: Rs 30,000</span>
+          <span style={{ marginLeft: "30px" }}>{info.job_type}</span>
+          <span style={{ marginRight: "247px" }}>Stipend: Rs {info.stipend}</span>
         </div>
       </div>
       <hr style={{ marginLeft: "24px"}} />
       <div className="bottom">
-        <span style={{ marginRight: "30px" }}>4 days ago</span>
+        <span style={{ marginRight: "30px" }}>{diffDays} days ago</span>
         <span style={{ marginRight: "0px", color: "#D7263D" }}>
           <Icon enabled name="clock outline" />
           Registration Ended 3 days ago
