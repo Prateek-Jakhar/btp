@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./../css/Dashboard.css";
 import LeftHeader from "./LeftHeader";
 import FeedButton from "./FeedButton";
 import NewOpportunityCard from "./NewOpportunityCard";
 import OldOpportunityCard from "./OldOpportunityCard";
 import NewOpportunityCardTop from "./NewOpportunityCardTop";
+import {db} from "./Firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const Dashboard = () => {
+  const [dataApplication, setDataApplication] = useState([]);
+  const [dataForums, setDataForums] = useState([]);
+
+    const fetchPostApplication = async () => {
+        const querySnapshot = await getDocs(collection(db, "applications"))
+        let data_list = []
+        querySnapshot.forEach((doc) => {
+            data_list.push(doc.data());
+        });
+        setDataApplication(data_list);
+    }
+
+    const fetchPostForums = async () => {
+        const querySnapshot = await getDocs(collection(db, "forums"))
+        let data_list2 = []
+        querySnapshot.forEach((doc) => {
+            data_list2.push(doc.data());
+        });
+        setDataForums(data_list2);
+    }
+
+    useEffect(()=>{
+        fetchPostApplication();
+        fetchPostForums();
+    },[])
+
+    useEffect(()=>{
+        fetchPostApplication();
+    },[])
+
   return (
     <div className="dashboardMain">
       <div style={{ width: "228px" }}>
@@ -22,10 +54,22 @@ const Dashboard = () => {
           <NewOpportunityCardTop />
         </div>
         <div className="mainSecondMiddle">
-          <NewOpportunityCard />
+          {dataApplication.map((item)=>{
+            return(
+              <>
+                <NewOpportunityCard info={item}/>
+              </>
+            )
+          })}
         </div>
         <div className="mainBottom">
-          <OldOpportunityCard />
+          {dataForums.map((item)=>{
+            return(
+              <>
+                <OldOpportunityCard info={item}/>
+              </>
+            )
+          })}
         </div>
       </div>
     </div>
