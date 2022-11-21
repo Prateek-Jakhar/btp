@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<LogIn />} />
-          <Route path="/forum" element={<Forum />} />
+          <Route path="/forum/:id" element={<Forum />} />
           <Route path="/application" element={<Applications />} />
           <Route path="/opportunity" element={<Opportunity />} />
           <Route path="/people" element={<People />} />

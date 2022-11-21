@@ -1,10 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState, useEffect} from "react";
 import "../css/OldOpportunityCard.css";
 import Button from "./Button";
 import pic from "../assets/student-pic.png";
 
-const OldOpportunityCard = ({info}) => {
+const OldOpportunityCard2 = ({info}) => {
   let profile_data = info.company_name + ' - Hiring for ';
   for (let i=0; i<info.profile.length; i++){
     if (i === 0){
@@ -17,39 +16,24 @@ const OldOpportunityCard = ({info}) => {
       profile_data += info.profile[i]
     }
   }
-
   const recruit_year = parseInt(info.batch_year) + 4;
   profile_data += '. - ' + recruit_year + ' Batch Recruitment Event'
-
-  if (profile_data.length > 120){
-    profile_data = profile_data.slice(0, 117) + '...';
-  }
-
-  let profile_disc = info.description;
-  console.log(profile_disc.length);
-
-  if (profile_disc.length > 350){
-    profile_disc = profile_disc.slice(0, 347) + '...';
-  }
 
   var date1 = new Date(info.experience[0].date.seconds*1000);
   var date2 = new Date();
   var diffTime = Math.abs(date2 - date1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  console.log(info.id);
 
   return (
     <div className="main-old">
-      <Link to={`/forum/${info.id}`}>
-        <div className="company-heading">
-          <p style={{ marginBottom: "4px" }}>
-            {profile_data}
-          </p>
-        </div>
-      </Link>
+      <div className="company-heading">
+        <p style={{ marginBottom: "4px" }}>
+          {profile_data}
+        </p>
+      </div>
       <span className="posted-by-system">Posted by system</span>
       <p className="main-content">
-        {profile_disc}
+        {info.description}
       </p>
       <div className="detail-tag">
         <div>
@@ -76,4 +60,4 @@ const OldOpportunityCard = ({info}) => {
   );
 };
 
-export default OldOpportunityCard;
+export default OldOpportunityCard2;

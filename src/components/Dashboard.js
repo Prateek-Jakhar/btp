@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./../css/Dashboard.css";
 import LeftHeader from "./LeftHeader";
 import FeedButton from "./FeedButton";
@@ -35,9 +36,9 @@ const Dashboard = () => {
         fetchPostForums();
     },[])
 
-    useEffect(()=>{
-        fetchPostApplication();
-    },[])
+    // useEffect(()=>{
+    //     fetchPostApplication();
+    // },[])
 
   return (
     <div className="dashboardMain">
