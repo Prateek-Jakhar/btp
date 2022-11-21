@@ -33,7 +33,7 @@ const Forum = () => {
       const querySnapshot = await getDocs(q)
       let data_list = []
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
+        // console.log(doc.data());
         setData(doc.data());
         setIsChanged(true);
       });

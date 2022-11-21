@@ -23,7 +23,7 @@ const PeopleList = () => {
             data_list.push(doc.data());
         });
         setDataPeople(data_list);
-        console.log(data_list);
+        // console.log(data_list);
     }
 
     useEffect(()=>{

@@ -26,7 +26,7 @@ const OldOpportunityCard = ({info}) => {
   }
 
   let profile_disc = info.description;
-  console.log(profile_disc.length);
+  // console.log(profile_disc.length);
 
   if (profile_disc.length > 350){
     profile_disc = profile_disc.slice(0, 347) + '...';
@@ -36,7 +36,7 @@ const OldOpportunityCard = ({info}) => {
   var date2 = new Date();
   var diffTime = Math.abs(date2 - date1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  console.log(info.id);
+  // console.log(info.id);
 
   return (
     <div className="main-old">

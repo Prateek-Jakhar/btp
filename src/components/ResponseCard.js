@@ -17,10 +17,10 @@ const ResponseCard = ({id}) => {
             setData(doc.data());
             var date1 = new Date(doc.data().date.seconds*1000);
             setDateStr(date1.getDate() + " " + date1.getMonth() + " '" + date1.getFullYear());
-            console.log(doc.data().user_img);
+            // console.log(doc.data().user_img);
             if (doc.data().user_img !== ""){
                 setUserImg(doc.data().user_img.split("file/d/").join("uc?export=view&id=").split("/view")[0]);
-                console.log(userImg);
+                // console.log(userImg);
             }else{
                 setUserImg(pic);
             }
