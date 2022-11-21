@@ -5,9 +5,14 @@ import NewOpportunityCard from "./NewOpportunityCard";
 import ProfileButton from "./ProfileButton";
 import {db} from "./Firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const Applications=()=>{
     const [dataApplication, setDataApplication] = useState([]);
+    let navigate = useNavigate();
+    if (localStorage.getItem('isLoggedIn') !== 'true'){
+      navigate("/login", { replace: true });
+    }
 
     const fetchPost = async () => {
         const querySnapshot = await getDocs(collection(db, "applications"))

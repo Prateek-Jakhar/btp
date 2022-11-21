@@ -7,8 +7,13 @@ import LeftHeader from "./LeftHeader.js";
 import { db } from "./Firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Forum = () => {
+  let navigate = useNavigate();
+  if (localStorage.getItem('isLoggedIn') !== 'true'){
+    navigate("/login", { replace: true });
+  }
   const {id} = useParams();
   const tempData = {
     date: '',
