@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/PeopleCard.css";
 import pic from "../assets/pic.png";
 import msg from "../assets/msg-icon.png"
@@ -11,6 +11,14 @@ import { listClasses } from "@mui/material";
 const PeopleCard = ({info}) => {
     // console.log(info);
     // { name: "Aryan Seth", department: "CSE", resume_link: "", batch_year: "Y19", user_image_link: "", phone_number: "8299821151", user_id: "001", program: "B.Tech" }
+    const [userImg, setUserImg] = useState(pic);
+    console.log(info.user_image_link);
+    useEffect(()=>{
+        if (info.user_image_link !== ""){
+            setUserImg(info.user_image_link.split("file/d/").join("uc?export=view&id=").split("/view")[0]);
+        }
+    },[]);
+    
     return (
         <div className="main">
             <div className="student-details">

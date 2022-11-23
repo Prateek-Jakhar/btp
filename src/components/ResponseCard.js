@@ -1,18 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import pic from "../assets/student-pic.png";
 import "../css/ResponseCard.css";
+import { db } from "./Firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
-const ResponseCard = () => {
+const ResponseCard = ({id}) => {
+    const [data, setData] = useState({});
+    const [dateStr, setDateStr] = useState("");
+    const [userImg, setUserImg] = useState(pic);
+
+    const fetchPost = async () => {
+        const q = query(collection(db, "experience"), where("id", "==", id));
+        const querySnapshot = await getDocs(q)
+        let data_list = []
+        querySnapshot.forEach((doc) => {
+            setData(doc.data());
+            var date1 = new Date(doc.data().date.seconds*1000);
+            setDateStr(date1.getDate() + " " + date1.getMonth() + " '" + date1.getFullYear());
+            // console.log(doc.data().user_img);
+            if (doc.data().user_img !== ""){
+                setUserImg(doc.data().user_img.split("file/d/").join("uc?export=view&id=").split("/view")[0]);
+                // console.log(userImg);
+            }else{
+                setUserImg(pic);
+            }
+        });
+        
+    }
+
+    useEffect(()=>{
+        fetchPost();
+    },[])
+
+
     return(
         <div className="response-card">
             <div className="student-details-response">
-                <img className="student-pic-response" src={pic} alt="" />
+                <img className="student-pic-response" src={userImg} alt="" />
                 <div className="student-response">
                     <div className="name-response">
-                        Nitesh Patel
+                        {data.name}
                     </div>
                     <div className="date-of-response">
-                        8 May '22
+                        {dateStr}
                     </div>
                 </div>
             </div>
@@ -21,15 +51,14 @@ const ResponseCard = () => {
                     For what role was the interview conducted?
                 </div>
                 <div className="first-answer">
-                    SDE Intern
+                    {data.a1}
                 </div>
                 <hr />
                 <div className="second-question">
                     What questions were asked in the various rounds? You can also provide the answers to them.
                 </div>
                 <div className="second-answer">
-                    The questions in the first round were based on CS fundamentals and coding questions were of leetcode medium level.
-                    For the second round, easy debugging questions and medium-hard level DSA questions were there. In the interview, one of the questions was based on Dynamic Programming.
+                    {data.a2}
                 </div>
                 <hr />
             </div>

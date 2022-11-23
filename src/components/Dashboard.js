@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./../css/Dashboard.css";
 import LeftHeader from "./LeftHeader";
 import FeedButton from "./FeedButton";
@@ -7,10 +8,16 @@ import OldOpportunityCard from "./OldOpportunityCard";
 import NewOpportunityCardTop from "./NewOpportunityCardTop";
 import {db} from "./Firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [dataApplication, setDataApplication] = useState([]);
   const [dataForums, setDataForums] = useState([]);
+  let navigate = useNavigate();
+
+  if (localStorage.getItem('isLoggedIn') !== 'true'){
+    navigate("/login", { replace: true });
+  }
 
     const fetchPostApplication = async () => {
         const querySnapshot = await getDocs(collection(db, "applications"))
@@ -35,9 +42,9 @@ const Dashboard = () => {
         fetchPostForums();
     },[])
 
-    useEffect(()=>{
-        fetchPostApplication();
-    },[])
+    // useEffect(()=>{
+    //     fetchPostApplication();
+    // },[])
 
   return (
     <div className="dashboardMain">

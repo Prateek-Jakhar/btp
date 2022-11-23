@@ -6,10 +6,19 @@ import { TextField } from '@material-ui/core';
 import './../css/LoginForm.css';
 import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword  } from "firebase/auth";
 import {auth, googleProvider} from './Firebase';
+import { useNavigate } from "react-router-dom";
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// toast.configure()
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    let navigate = useNavigate();
+    if (localStorage.getItem('isLoggedIn') === 'true'){
+        navigate("/", { replace: true });
+    }
 
     const googleSignIn = () => {
       signInWithPopup(auth, googleProvider)
@@ -21,9 +30,21 @@ const LoginForm = () => {
         const user = result.user;
         // ...
         console.log("LOGIN SUCCESSFUL");
-        console.log(credential);
-        console.log(token);
-        console.log(user);
+        if (user.email.split('@')[1] === 'lnmiit.ac.in'){
+            localStorage.setItem("isLoggedIn", true);
+            navigate("/", { replace: true });
+        }else{
+            toast.error('Login failed', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        }
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
@@ -32,11 +53,17 @@ const LoginForm = () => {
         const email = error.customData.email;
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
-        console.log("LOGIN SUCCESSFUL");
-        console.log(credential);
-        console.log(errorCode);
-        console.log(errorMessage);
-        console.log(email);
+        console.log("LOGIN FAILED");
+        toast.error('Login failed', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
         // ...
       });
     }
@@ -56,18 +83,29 @@ const LoginForm = () => {
             const user = userCredential.user;
             // ...
             console.log("LOGIN SUCCESSFUL");
-            console.log(user);
+            localStorage.setItem("isLoggedIn", true);
+            navigate("/", { replace: true });
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log('LOGIN FAILED');
-            console.log(errorCode);
-            console.log(errorMessage);
+            toast.error('Login failed', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         });
     }
 
   return (
+    <>
+    <ToastContainer />
       <div class="main">
           <img id="logoImage" src={LoginLogo} alt="log" width="96px" height="148px"/>
           <button className="button-google" onClick={googleSignIn}>Google</button>
@@ -95,6 +133,7 @@ const LoginForm = () => {
               <div className="bottom-div"><span className='newAccount'> Don't have an account yet?</span><a className="createAcc">Create Account</a></div>
           </div>
     </div>
+    </>
   )
 }
 

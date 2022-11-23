@@ -7,12 +7,13 @@ import hat from "../assets/hat.png";
 const NewOpportunityCard = ({info}) => {
   var date1 = new Date(info.date.seconds*1000);
   var date2 = new Date();
-  // console.log(date1);
-  // console.log(date2);
   var diffTime = Math.abs(date2 - date1);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-  // console.log(diffTime + " milliseconds");
-  // console.log(diffDays + " days");
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  date1 = new Date(info.end_date.seconds*1000);
+  diffTime = Math.abs(date2 - date1);
+  const diffEndDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
   return (
     <div className="main-card">
       <div className="top">
@@ -52,7 +53,7 @@ const NewOpportunityCard = ({info}) => {
         <span style={{ marginRight: "30px" }}>{diffDays} days ago</span>
         <span style={{ marginRight: "0px", color: "#D7263D" }}>
           <Icon enabled name="clock outline" />
-          Registration Ended 3 days ago
+          Registration Ended {diffEndDays} days ago
         </span>
       </div>
     </div>
