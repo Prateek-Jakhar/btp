@@ -1,10 +1,10 @@
 import { Button } from '@mui/material';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import LoginLogo from './../assets/login_logo.png';
 import DividerWithText from './DividerWithText';
 import { TextField } from '@material-ui/core';
 import './../css/LoginForm.css';
-import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword  } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, signOut  } from "firebase/auth";
 import {auth, googleProvider} from './Firebase';
 import { useNavigate } from "react-router-dom";
 import {toast, ToastContainer} from 'react-toastify';
@@ -20,6 +20,32 @@ const LoginForm = () => {
         navigate("/", { replace: true });
     }
 
+    const googleSignOut = () => {
+        signOut(auth).then(() => {
+            toast.success('User successfully logged out', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+          }).catch((error) => {
+            toast.error('An error occured! Please try again.', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+          });
+    }
+
     const googleSignIn = () => {
       signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -28,10 +54,13 @@ const LoginForm = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
+        console.log(user);
         // ...
         console.log("LOGIN SUCCESSFUL");
         if (user.email.split('@')[1] === 'lnmiit.ac.in'){
             localStorage.setItem("isLoggedIn", true);
+            localStorage.setItem("userName", user.displayName);
+            localStorage.setItem("photoURL", user.photoURL);
             navigate("/", { replace: true });
         }else{
             toast.error('Login failed', {
